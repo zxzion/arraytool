@@ -4,14 +4,14 @@
 # Copyright (c) 2014 Srinivasa Rao Zinka
 # License: New BSD License.
 
-from __future__ import division
+
 import numpy as np
 import sympy as sp
 import scipy.signal as signal
 import matplotlib.pyplot as plt
 import warnings
-import Tkinter as ti
-import tkFileDialog as tkdlg
+import tkinter as ti
+import tkinter.filedialog as tkdlg
 
 # adjusting "matplotlib" label fonts
 from matplotlib import rc
@@ -496,13 +496,13 @@ def  annihilation(p,q,i,j,N,M):
     """    
     if(p==q):
         if(p==i):
-            print p==i
+            print(p==i)
             tht = np.arctan((-M[i-1,j-1]+np.sqrt(M[i-1,j-1]**2-M[i-1,i-1]*M[j-1,j-1])/M[j-1,j-1]))
         else:
-            print'p!=i'
+            print('p!=i')
             tht =np.arctan((M[i-1,j-1]+np.sqrt((M[i-1,j-1]**2-M[i-1,i-1]*M[j-1,j-1])))/M[i-1,i-1])            
     else:
-        print p!=i
+        print(p!=i)
         if(p==i and q==j):
             tht=0.5*np.arctan(2*M[i-1,j-1]/(M[j-1,j-1]-M[i-1,i-1]))            
         elif (p==j and q==i):
@@ -640,9 +640,9 @@ if __name__ == '__main__':
     F = w_to_s(F, coef_norm=True)
     P = w_to_s(P, coef_norm=True) 
     
-    print 'F:', '\n', F; print 'P:', '\n', P
+    print('F:', '\n', F); print('P:', '\n', P)
     E, roots_E = poly_E(eps, eps_R, F, P)
-    print 'E:', '\n', E
+    print('E:', '\n', E)
      
 #    F1, P1, E1 = dual_band(F, P, E, 0.4)
      
@@ -652,9 +652,9 @@ if __name__ == '__main__':
    
     # From now onwards, unlike the Cameron's example, this filter is doubly terminated
     M, Rs, Rl = coupling_N(F, P, E, eps, eps_R)
-    print 'M:', '\n', M.real
-    print 'Rs:', Rs
-    print 'Rl:', Rl
+    print('M:', '\n', M.real)
+    print('Rs:', Rs)
+    print('Rl:', Rl)
      
     MN_to_Sparam(M, Rs, Rl, w_min= -3, w_max=3, w_num=500, dB=True, dB_limit= -40)
     

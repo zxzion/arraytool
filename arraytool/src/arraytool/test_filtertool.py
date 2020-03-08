@@ -4,8 +4,9 @@
 # Copyright (c) 2014 Srinivasa Rao Zinka
 # License: New BSD License.
 
-from __future__ import division
+
 import numpy as np
+# from . import filtertool as ft
 import filtertool as ft
 
 N = 4
@@ -13,8 +14,8 @@ poles = np.array([1.2576, -0.1546 - 0.9218j, -0.1546 + 0.9218j])
 # poles = np.array([])
 
 F, P = ft.Chebyshev_gen(N, poles)
-print F
-print P
+print(F)
+print(P)
 
 ft.plot_rational(F, P, x_min= -1.1, x_max=1.1, x_num=1000)
 
@@ -24,9 +25,9 @@ P = ft.w_to_s(P, coef_norm=True)
 eps = 1.5; eps_R = 1
 E, roots_E = ft.poly_E(eps, eps_R, F, P)
 
-print E
-print F
-print P
+print(E)
+print(F)
+print(P)
 
 ft.plot_mag(eps, eps_R, F, P, E, w_min= -6, w_max=6, w_num=500, dB=True,
              dB_limit= -70)

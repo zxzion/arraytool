@@ -16,13 +16,14 @@ Just some important basic routines are done. There is much more to be done!
 - Will be provided later
 """
 
-from __future__ import division
+
 import numpy as np
 import matplotlib.pyplot as plt
 from mayavi import mlab
 import Zolotarev as Zol
-import Tkinter as ti
-import tkFileDialog as tkdlg
+# from . import Zolotarev as Zol
+import tkinter as ti
+import tkinter.filedialog as tkdlg
 
 # adjusting "matplotlib" label fonts
 from matplotlib import rc
@@ -348,7 +349,7 @@ def dist(a, M, R_x, dist_type_x, b=None, N=None, R_y=None, dist_type_y=False, mb
     elif(dist_type_x == "Pritchard-Chebyshev-ue"):
         U0 = AF_zeros(a, M, R_x, dist_type="Duhamel-u")
         Ax = A_frm_zeros(U0, a, M, symmetry=False).T  # Done
-        print Ax
+        print(Ax)
 
     if(dist_type_y):
         # modify the symmetry thing in MZ-s, be, ue patterns ...
@@ -437,10 +438,10 @@ def pattern_u(array_ip, u_scan=0, u_min=-1, u_max=1, u_num=200, scale="dB",
     # Making sure all elements in y and z columns of the "array_ip" are zeros
     z_flag = True  # z_flag, i.e., zinka's flag ... :)
     if ((abs(y) > 0).sum()):
-        print "All elements in y-column of array input should be zero."
+        print("All elements in y-column of array input should be zero.")
         z_flag = False
     elif ((abs(z) > 0).sum()):
-        print "All elements in z-column of array input should be zero."
+        print("All elements in z-column of array input should be zero.")
         z_flag = False
 
     # After making sure, proceed to the next level, i.e., evaluate the pattern
@@ -550,7 +551,7 @@ def pattern_uv(array_ip, u_scan=0, v_scan=0, u_min=-1, u_max=1, u_num=50,
     # Making sure all elements in the z-column of the "array_ip" are zeros
     z_flag = True
     if ((abs(z) > 0).sum()):
-        print "All elements in the z-column of array input should be zero."
+        print("All elements in the z-column of array input should be zero.")
         z_flag = False
 
     # After making sure, proceed to the next level, i.e., evaluate the pattern

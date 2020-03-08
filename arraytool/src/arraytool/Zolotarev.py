@@ -17,7 +17,7 @@ Zolotarev polynomial related routines.
     
 """
 
-from __future__ import division
+
 import numpy as np
 from scipy import optimize
 from mpmath import mpf, mp, qfrom, ellipk, ellipe, ellipf, ellipfun, jtheta
@@ -94,7 +94,7 @@ def z_am(u, m):
         else:
             phi = mp.asin(snM) - mp.pi
     else:
-        print "This function only handles real 'phi' values."
+        print("This function only handles real 'phi' values.")
     return phi
 
 def z_zn(u, m):
@@ -146,8 +146,8 @@ def z_Zolotarev(N, x, m):
     u = ellipf(mp.asin(xbar), m) # rearranged eq 20, [Levy70]_, asn(x) = F(asin(x)|m)     
     f = mp.cosh((N / 2) * mp.log(z_eta(M + u, m) / z_eta(M - u, m)))
     if (f.imag / f.real > 1e-10):
-        print "imaginary part of the Zolotarev function is not negligible!"
-        print "f_imaginary = ", f.imag
+        print("imaginary part of the Zolotarev function is not negligible!")
+        print("f_imaginary = ", f.imag)
     else:
         if (x > 0): # no idea why I am doing this ... anyhow, it seems working
             f = -f.real  
@@ -261,13 +261,13 @@ if __name__ == '__main__':
     
     # Getting the value of the parameter 'm' from a given 'R' (remember!, m=k^2)
     m = z_m_frm_R(N, R)
-    print 'm =', m
-    print type(m)
+    print('m =', m)
+    print(type(m))
     
     # Testing the side-lobe ratio (i.e., SLR in linear scale)
     R = z_Zolotarev_x2(N, m)
-    print 'R =', R
-    print 'SLR =', 10 * mp.log10(R ** 2), '(dB)' # SLR depends only on the magnitude of R here
+    print('R =', R)
+    print('SLR =', 10 * mp.log10(R ** 2), '(dB)') # SLR depends only on the magnitude of R here
     
     # x1, x2, x3 values ... just for the plotting purpose
     x1, x2, x3 = z_x123_frm_m(N, m)
@@ -291,7 +291,7 @@ if __name__ == '__main__':
         
     # Getting the Zolotarev polynomial coefficients and roots
     coef, roots = z_Zolotarev_poly(N, m)
-    print 'polynomial coefficients:', '\n', coef, '\n', 'polynomial roots:', '\n', roots    
+    print('polynomial coefficients:', '\n', coef, '\n', 'polynomial roots:', '\n', roots)    
     
     # Cross-checking the obtained coefficients
     x1 = np.linspace(-1.04, 1.04, num=100)
