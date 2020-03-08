@@ -23,31 +23,31 @@ array_ip = pl.ip_format(a, b, A, gamma, plot=False, stem=True, mayavi_app=False)
 # Orthogonal beams
 #==============================================================================
 
-u1, F1 = pl.pattern_u(array_ip, u_scan=0, u_min=-3, u_max=3, u_num=700, scale="linear",
+u1, F1, AF1 = pl.pattern_u(array_ip, u_scan=0, u_min=-3, u_max=3, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u2, F2 = pl.pattern_u(array_ip, u_scan=1/(M*a), u_min=-3, u_max=3, u_num=700, scale="linear",
+u2, F2, AF2 = pl.pattern_u(array_ip, u_scan=1/(M*a), u_min=-3, u_max=3, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u3, F3 = pl.pattern_u(array_ip, u_scan=2/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u3, F3, AF3 = pl.pattern_u(array_ip, u_scan=2/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u4, F4 = pl.pattern_u(array_ip, u_scan=3/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u4, F4, AF4 = pl.pattern_u(array_ip, u_scan=3/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u5, F5 = pl.pattern_u(array_ip, u_scan=4/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u5, F5, AF5 = pl.pattern_u(array_ip, u_scan=4/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u6, F6 = pl.pattern_u(array_ip, u_scan=5/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u6, F6, AF6 = pl.pattern_u(array_ip, u_scan=5/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u7, F7 = pl.pattern_u(array_ip, u_scan=6/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u7, F7, AF7 = pl.pattern_u(array_ip, u_scan=6/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u8, F8 = pl.pattern_u(array_ip, u_scan=7/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
+u8, F8, AF8 = pl.pattern_u(array_ip, u_scan=7/(M*a), u_min=-1, u_max=1, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
-u9, F9 = pl.pattern_u(array_ip, u_scan=8/(M*a), u_min=-3, u_max=3, u_num=700, scale="linear",
+u9, F9, AF9 = pl.pattern_u(array_ip, u_scan=8/(M*a), u_min=-3, u_max=3, u_num=700, scale="linear",
           dB_limit=-40, factor="NF0", plot_type=False, lattice=True)
 
 plt.plot(u1, F1)
